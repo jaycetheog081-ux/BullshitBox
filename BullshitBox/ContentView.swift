@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingMobileGestalt = false
+
     private let green = Color(red: 0.42, green: 1.0, blue: 0.35)
 
     private let modules: [ModuleItem] = [
@@ -63,7 +65,16 @@ struct ContentView: View {
                     spacing: 12
                 ) {
                     ForEach(modules) { item in
-                        ModuleCard(item: item, accent: green)
+                        if item.title == "MobileGestalt" {
+                            Button {
+                                showingMobileGestalt = true
+                            } label: {
+                                ModuleCard(item: item, accent: green)
+                            }
+                            .buttonStyle(.plain)
+                        } else {
+                            ModuleCard(item: item, accent: green)
+                        }
                     }
                 }
 
@@ -93,6 +104,9 @@ struct ContentView: View {
             Color(red: 0.035, green: 0.045, blue: 0.055)
                 .ignoresSafeArea()
         )
+        .sheet(isPresented: $showingMobileGestalt) {
+            MobileGestaltInspectorView()
+        }
     }
 }
 
