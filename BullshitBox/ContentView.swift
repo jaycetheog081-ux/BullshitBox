@@ -11,91 +11,88 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 22) {
-                    VStack(alignment: .leading, spacing: 7) {
-                        Text("BullshitBox")
-                            .font(.system(size: 34, weight: .black, design: .rounded))
+        ScrollView {
+            VStack(alignment: .leading, spacing: 22) {
+                VStack(alignment: .leading, spacing: 7) {
+                    Text("BullshitBox")
+                        .font(.system(size: 34, weight: .black, design: .rounded))
 
-                        Text("MOBILEGESTALT EDIT SLOP")
-                            .font(.system(size: 11, weight: .bold, design: .monospaced))
-                            .tracking(2.2)
-                            .foregroundStyle(green)
-                    }
-                    .padding(.top, 12)
-
-                    Button {} label: {
-                        HStack(spacing: 12) {
-                            Image(systemName: "sparkles")
-
-                            Text("Button that does fucking nothing (Siri AI)")
-                                .font(.system(size: 14, weight: .bold))
-
-                            Spacer(minLength: 0)
-
-                            Image(systemName: "arrow.up.right")
-                        }
-                        .foregroundStyle(.black)
-                        .padding(17)
-                        .frame(maxWidth: .infinity)
-                        .background(green, in: RoundedRectangle(cornerRadius: 16))
-                    }
-                    .buttonStyle(.plain)
-
-                    HStack {
-                        Text("TOOLBOX")
-                            .font(.system(size: 11, weight: .bold, design: .monospaced))
-                            .tracking(2)
-                            .foregroundStyle(.white.opacity(0.55))
-
-                        Spacer()
-
-                        Text("A13 AND NEWER")
-                            .font(.system(size: 10, weight: .bold, design: .monospaced))
-                            .foregroundStyle(green)
-                    }
-
-                    LazyVGrid(
-                        columns: [
-                            GridItem(.flexible()),
-                            GridItem(.flexible())
-                        ],
-                        spacing: 12
-                    ) {
-                        ForEach(modules) { item in
-                            ModuleCard(item: item, accent: green)
-                        }
-                    }
-
-                    HStack(alignment: .top, spacing: 10) {
-                        Image(systemName: "info.circle.fill")
-                            .foregroundStyle(green)
-
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("Research scaffold ready")
-                                .font(.system(size: 13, weight: .bold))
-
-                            Text("No exploit backend is integrated. System changes are not applied.")
-                                .font(.system(size: 12))
-                                .foregroundStyle(.white.opacity(0.58))
-                        }
-                    }
-                    .padding(14)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(
-                        Color.white.opacity(0.06),
-                        in: RoundedRectangle(cornerRadius: 14)
-                    )
+                    Text("MOBILEGESTALT EDIT SLOP")
+                        .font(.system(size: 11, weight: .bold, design: .monospaced))
+                        .tracking(2.2)
+                        .foregroundStyle(green)
                 }
-                .padding(18)
+                .padding(.top, 12)
+
+                Button {} label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "sparkles")
+
+                        Text("Button that does fucking nothing (Siri AI)")
+                            .font(.system(size: 14, weight: .bold))
+
+                        Spacer(minLength: 0)
+
+                        Image(systemName: "arrow.up.right")
+                    }
+                    .foregroundStyle(.black)
+                    .padding(17)
+                    .frame(maxWidth: .infinity)
+                    .background(green, in: RoundedRectangle(cornerRadius: 16))
+                }
+                .buttonStyle(.plain)
+
+                HStack {
+                    Text("TOOLBOX")
+                        .font(.system(size: 11, weight: .bold, design: .monospaced))
+                        .tracking(2)
+                        .foregroundStyle(.white.opacity(0.55))
+
+                    Spacer()
+
+                    Text("A13 AND NEWER")
+                        .font(.system(size: 10, weight: .bold, design: .monospaced))
+                        .foregroundStyle(green)
+                }
+
+                LazyVGrid(
+                    columns: [
+                        GridItem(.flexible()),
+                        GridItem(.flexible())
+                    ],
+                    spacing: 12
+                ) {
+                    ForEach(modules) { item in
+                        ModuleCard(item: item, accent: green)
+                    }
+                }
+
+                HStack(alignment: .top, spacing: 10) {
+                    Image(systemName: "info.circle.fill")
+                        .foregroundStyle(green)
+
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Research scaffold ready")
+                            .font(.system(size: 13, weight: .bold))
+
+                        Text("No exploit backend is integrated. System changes are not applied.")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.white.opacity(0.58))
+                    }
+                }
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(
+                    Color.white.opacity(0.06),
+                    in: RoundedRectangle(cornerRadius: 14)
+                )
             }
-            .background(
-                Color(red: 0.035, green: 0.045, blue: 0.055)
-                    .ignoresSafeArea()
-            )
-            .toolbar(.hidden, for: .navigationBar)
+            .padding(18)
         }
+        .background(
+            Color(red: 0.035, green: 0.045, blue: 0.055)
+                .ignoresSafeArea()
+        )
     }
 }
 
