@@ -1,0 +1,23 @@
+name: BullshitBox
+options:
+  bundleIdPrefix: com.bullshitbox
+  deploymentTarget:
+    iOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    GENERATE_INFOPLIST_FILE: YES
+    INFOPLIST_KEY_CFBundleDisplayName: BullshitBox
+targets:
+  BullshitBox:
+    type: application
+    platform: iOS
+    sources:
+      - path: BullshitBox
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.bullshitbox.app
+        PRODUCT_NAME: BullshitBox
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        CODE_SIGNING_ALLOWED: NO
